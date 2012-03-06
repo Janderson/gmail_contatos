@@ -6,11 +6,11 @@ Gem::Specification.new do |s|
   s.name        = "gmail_contatos"
   s.version     = GmailContatos::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
+  s.authors     = ["TODO: Janderson F. Ferreira"]
+  s.email       = ["TODO: ffjanderson@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{TODO: Simples gem para sincronizar com Gmail Contatos}
+  s.description = %q{TODO: }
 
   s.rubyforge_project = "gmail_contatos"
 
