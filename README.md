@@ -8,11 +8,6 @@ adicione no Gemfile:
 ```ruby
 gem "gmail_contatos"
 ```
-
-adicione a linha no routes.rb:
-```ruby
-mount GmailContatos::Engine => '/gmail_contatos'
-```
 	
 no controller que deseja usar os contatos do google adicione:
 ```ruby
