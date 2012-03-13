@@ -1,3 +1,33 @@
 ---- Simples Gem para Sincronizar com Google Contact ----
 
+
+<h2>Instalação</h2>
+
+adicione a linha no routes.rb:
+	mount GmailContatos::Engine => '/gmail_contatos'
+	
+no controller que deseja usar os contatos do google adicione :
+	before_filter :get_gmail_contatos, :only=>:index
+
+Obs: Na função que tiver o :only (nesse caso a index) o gmail_contatos retornará uma objetos @gcontatos que você pode usar 
+como quiser, essa variável tera uma Array de objetos do tipo Google::Contact que tem os seguintes atributos [nome, email].
+
+Uma sugestão de uso para a view é:
+
+<table border=1>
+  <tr>
+    <th>Nome</th>
+    <th>email</th>
+  </tr>
+
+<% @gcontatos.each do |c| %>
+  <tr>
+    <td><%= c.nome %></td>
+    <td><%= c.email %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<h2>Contribuições, dicas e Reclamações :D</h2>
 link https://rubygems.org/gems/gmail_contatos
