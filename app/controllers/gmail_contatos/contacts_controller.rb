@@ -3,7 +3,7 @@ module GmailContatos
   class ContactsController < GmailContatos::ApplicationController
     def new
 			# refatorar para funcionar com qualquer config de rota
-      redirect_to Google::Authorization.build_auth_url("http://#{request.env["HTTP_HOST"]}/gmail_contatos/gauthorize")
+      redirect_to Google::Authorization.build_auth_url("http://#{request.env["HTTP_HOST"]}/g_auth")
     end
 
     def authorize

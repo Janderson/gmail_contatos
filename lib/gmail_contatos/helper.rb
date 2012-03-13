@@ -7,7 +7,7 @@ module GmailContatos
 		def get_gmail_contatos
 				unless params.member?(:gtoken) then
 					session[:back_url]  = request.url.to_s
-					redirect_to "/gmail_contatos/autorizar"
+					redirect_to "g_autorizar"
 				else 
 					puts "chamar".inspect
 					@gcontatos = Google::Contact.all(params["gtoken"])
