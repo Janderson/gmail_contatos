@@ -1,10 +1,11 @@
 ---- Simples Gem para Sincronizar com Google Contact ----
 
 
-h2.Instalação
+h2. Instalação
 
 adicione no Gemfile:
 
+<pre><code>gem "gmail_contatos"</code></pre>
 
 adicione a linha no routes.rb:
 <pre><code>mount GmailContatos::Engine => '/gmail_contatos'</code></pre>
