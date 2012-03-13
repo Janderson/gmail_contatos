@@ -1,5 +1,0 @@
-module GmailContatos
-  def self.say
-    "Hello World!"
-  end
-end

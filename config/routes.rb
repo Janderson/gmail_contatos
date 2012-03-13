@@ -1,4 +1,5 @@
-GmailContatos::Application.routes.draw do
-  get "gcontacts" => "gmail_contatos/contacts#index" 
-  get "gc" => "gmail_contatos/contacts#index" 
+GmailContatos::Engine.routes.draw do
+  get "lista" => "contacts#index"
+  get "gauthorize" =>"contacts#authorize"
+  root :to=>"contacts#new"
 end

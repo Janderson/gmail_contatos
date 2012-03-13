@@ -18,16 +18,21 @@ module Google
     def self.exchange_singular_use_for_session_token(token)
       require 'net/http'
       require 'net/https'
-
+			puts "exchange_singular_use_for_session_token: #{token}"
       http = Net::HTTP.new('www.google.com', 443)
       http.use_ssl = true
+			http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       path = '/accounts/AuthSubSessionToken'
-      headers = {'Authorization' => "AuthSub token=#{token}"}
-      resp, data = http.get(path, headers)
-
-      if resp.code == "200" 
+			headers = {'Authorization' => "AuthSub token=\"#{token}\"", 'GData-Version' => "3.0"}
+      #headers = {'Authorization' => "AuthSub token=\"#{token}\""}
+      r1,r2,r3 = http.get2(path, headers)
+			puts "r1 b: #{r1.body}"
+			puts "r1 h: #{r1.header}"
+			puts "r3 to_h: #{r1.to_hash}"
+			#path = "/m8/feeds/contacts/default/full?max-results=10000"
+      if r1.code == "200" 
         token = ''
-        data.split.each do |str|
+        r1.body.split.each do |str|
           if not (str =~ /Token=/).nil?
             token = str.gsub(/Token=/, '')
           end
