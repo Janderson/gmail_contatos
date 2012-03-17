@@ -10,7 +10,7 @@ To set up a controller with google contacts, just add this before_filter:
 
 	before_filter :get_gmail_contatos, :only=>:index
 
-Note: In function that has the `:only` (in our case the index) returns an object `@gcontatos` that can be used, this variable contains an Array(`Google::Contact`) of objects with `[name, email]`.
+Note: In function that has the `:only` (in our case the index) returns an object `@gcontatos` that can be used, this variable contains an Array(`Google::Contact`) of objects with `[nome, email]`.
 
 ###Suggested Configuration for View
 
